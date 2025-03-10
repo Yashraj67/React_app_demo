@@ -20,4 +20,5 @@ jobs:
           password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
 
       - name: Create and Push Docker image
-        run: docker compose build --push
+        run: |
+          docker compose build --push
