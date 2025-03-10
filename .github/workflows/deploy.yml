@@ -19,8 +19,5 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
 
-      - name: Create Docker image
-        run: docker compose build
-
-      - name: Push to Docker Hub
-        run: docker push "${{secrets.DOCKER_USERNAME}}"/react_app_demo:latest
+      - name: Create and Push Docker image
+        run: docker compose build --push
