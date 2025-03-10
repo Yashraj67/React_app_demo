@@ -19,7 +19,12 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
 
-      - name: Build and Push Images
+      - name: Build Images
         run: |
-          DOCKER_BUILDKIT=1 docker compose build --push
-          docker pull yashraj227/react_app_demo:latest
+          docker compose build
+
+      - name: TAG and Push Image
+        run: |
+          docker tag yashraj227/react_app_demo:latest yashraj227/react_app_demo:latest
+          echo docker image ls
+          docker push yashraj227/react_app_demo:latest
