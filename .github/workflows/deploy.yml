@@ -22,3 +22,4 @@ jobs:
       - name: Build and Push Images
         run: |
           DOCKER_BUILDKIT=1 docker compose build --push
+          docker pull yashraj227/react_app_demo:latest
