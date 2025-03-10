@@ -21,6 +21,4 @@ jobs:
 
       - name: Build and Push Images
         run: |
-          docker compose build --verbose --push
-          echo "Push completed. Checking image availability..."
-          docker pull yashraj227/react_app_demo:latest
+          DOCKER_BUILDKIT=1 docker compose build --push
