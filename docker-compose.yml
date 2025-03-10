@@ -1,5 +1,6 @@
 services:
   myreactapp:
     build: ./
+    container_name: yashraj227/react_app_demo:latest
     ports:
       - 3000:5173
